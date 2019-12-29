@@ -1,5 +1,7 @@
 # Terraform script
 
+Master에 push하면 Github action을 통해 aws에 배포한다.
+
 ### lambda.tf
 
 작성한 람다함수를 AWS에 업로드 하기 위한 Terraform script.
