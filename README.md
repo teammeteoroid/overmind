@@ -10,6 +10,10 @@
 ### AWS Setup
 
 AWS의 Lambda, APIGateway, Congnito, S3, DynamoDB를 이용하여 서비스를 배포한다.
+Terraform도구를 사용하여 인프라를 정의한다.
+Github Action을 사용하여 CI/CD를 구성한다.
+
+#### Back-end
 
 
 ### Deploy scenario
