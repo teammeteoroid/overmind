@@ -16,6 +16,4 @@ Github Action을 사용하여 CI/CD를 구성한다.
 #### Back-end
 
 
-#### front-end
-
 ### Deploy scenario
