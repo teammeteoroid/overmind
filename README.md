@@ -17,5 +17,13 @@ Github Action을 사용하여 CI/CD를 구성한다.
 
 
 #### front-end
+배포순서
+##### React app build
+yarn build
+"yarn build" 명령어로 React앱을 빌드한다.
+
+##### terraform 설정
+
+
 
 ### Deploy scenario

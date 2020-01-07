@@ -14,6 +14,10 @@ Terraform도구를 사용하여 인프라를 정의한다.
 Github Action을 사용하여 CI/CD를 구성한다.
 
 #### Back-end
+구성:
+Lambda함수를 정의하기 위한 js파일
+Lambda함수, APIGateway Terraform설정 파일.
 
+#### front-end
 
 ### Deploy scenario
