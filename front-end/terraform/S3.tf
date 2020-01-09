@@ -2,8 +2,7 @@
 provider "aws" {
   version = "~> 2.0"
   region  = "ap-northeast-2"
-  access_key = "AKIASVTXBURXUNR5FP4V"
-  secret_key = "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"
+
 }
 resource "aws_s3_bucket" "static_hosting" {
   bucket = "www.test-overmind.com"
