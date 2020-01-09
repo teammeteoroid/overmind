@@ -2,10 +2,6 @@
 provider "aws" {
   version = "~> 2.0"
   region  = "ap-northeast-2"
-<<<<<<< HEAD
-
-=======
->>>>>>> 25f2b31ee8083cf23970b32eb8babb95028f5aab
 }
 resource "aws_s3_bucket" "static_hosting" {
   bucket = "www.test-overmind.com"
