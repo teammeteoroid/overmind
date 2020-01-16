@@ -38,6 +38,6 @@ data "aws_iam_policy_document" "site_public_access" {
 resource "aws_s3_bucket_object" "object" {
   bucket       = "${aws_s3_bucket.static_hosting.id}"
   key          = "build"
-  source       = "../build"
+  source       = "../build/index.html"
   content_type = "text/html"
 }
