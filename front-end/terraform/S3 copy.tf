@@ -35,7 +35,11 @@ resource "aws_cloudfront_distribution" "website" {
       origin_access_identity = "${aws_cloudfront_origin_access_identity.website.cloudfront_access_identity_path}"
     }
   }
-
+custom_error_response {
+  error_code         = 404
+  response_code      = 200
+  response_page_path = "/index.html"
+}
   aliases             = ["demo.example.com"]
   comment             = "demo.example.com"
   enabled             = true
@@ -73,9 +77,6 @@ resource "aws_cloudfront_distribution" "website" {
   viewer_certificate {
     cloudfront_default_certificate = true
   }
-  custom_error_response {
-  error_code         = 404
-  response_code      = 200
-  response_page_path = "/index.html"
-}
+  
+  
 }
