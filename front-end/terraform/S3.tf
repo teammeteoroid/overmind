@@ -39,5 +39,5 @@ resource "aws_s3_bucket_object" "object" {
   bucket       = "${aws_s3_bucket.static_hosting.id}"
   key          = "build"
   source       = "../build"
-  //content_type = "text/html"
+  content_type = "text/html"
 }
