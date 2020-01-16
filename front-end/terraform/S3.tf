@@ -5,8 +5,8 @@ provider "aws" {
 }
 resource "aws_s3_bucket" "static_hosting" {
   bucket = "www.overmind.com"
-  acl     = "public-read"
-   website {
+  acl    = "public-read"
+  website {
     index_document = "index.html"
     error_document = "error.html"
   }
@@ -42,34 +42,34 @@ variable "upload_directory" {
 }
 variable "mime_types" {
   default = {
-    js    = "application/javascript"
-    map   = "application/javascript"
-    json  = "application/json"
-    eot   = "application/vnd.ms-fontobject"
-    png   = "image/png"
-    svg   = "image/svg+xml"
-    ttf   = "application/octet-stream"
-    woff  = "application/font-woff"
-    woff2 = "application/font-woff"
-    ico   = "image/x-icon"
-    css   = "text/css"
-    html  = "text/html"
-    txt   = "text/plain"
+    js      = "application/javascript"
+    map     = "application/javascript"
+    json    = "application/json"
+    eot     = "application/vnd.ms-fontobject"
+    png     = "image/png"
+    svg     = "image/svg+xml"
+    ttf     = "application/octet-stream"
+    woff    = "application/font-woff"
+    woff2   = "application/font-woff"
+    ico     = "image/x-icon"
+    css     = "text/css"
+    html    = "text/html"
+    txt     = "text/plain"
     LICENSE = "text/plain"
   }
 }
 resource "aws_s3_bucket_object" "object" {
-  bucket       = "${aws_s3_bucket.static_hosting.id}"
-#   key          = "build"
-#   source       = "../build"
+  bucket = "${aws_s3_bucket.static_hosting.id}"
+  #   key          = "build"
+  #   source       = "../build"
   //content_type = "text/html"
 
-  for_each      = fileset(var.upload_directory, "**/*.*")
-#   bucket        = aws_s3_bucket.s3_static.bucket
-  key           = replace(each.value, var.upload_directory, "")
-  source        = "${var.upload_directory}${each.value}"
-  acl           = "public-read"
-  etag          = filemd5("${var.upload_directory}${each.value}")
-  content_type  = lookup(var.mime_types, split(".", each.value)[length(split(".", each.value)) - 1])
+  for_each = fileset(var.upload_directory, "**/*.*")
+  #   bucket        = aws_s3_bucket.s3_static.bucket
+  key          = replace(each.value, var.upload_directory, "")
+  source       = "${var.upload_directory}${each.value}"
+  acl          = "public-read"
+  etag         = filemd5("${var.upload_directory}${each.value}")
+  content_type = lookup(var.mime_types, split(".", each.value)[length(split(".", each.value)) - 1])
   //content_type = "text/html"
 }
