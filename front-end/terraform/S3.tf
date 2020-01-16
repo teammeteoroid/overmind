@@ -4,7 +4,7 @@ provider "aws" {
   region  = "ap-northeast-2"
 }
 resource "aws_s3_bucket" "static_hosting" {
-  bucket = "www.test-overmind.com"
+  bucket = "www.overmind.com"
   website {
     index_document = "index.html"
   }
