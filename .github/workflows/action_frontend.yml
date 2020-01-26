@@ -10,7 +10,9 @@ jobs:
         uses: actions/checkout@master
       - name: 'move frontend'
         run: cd front-end
-      - name: 'yarn build'
+      - name: 'Pakages installation'
+        run : yarn install
+      - name: 'Pakages build'
         run: yarn build
   terraform:
     name: 'Terraform'
