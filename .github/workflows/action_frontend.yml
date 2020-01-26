@@ -2,6 +2,16 @@ name: 'Terraform GitHub Actions'
 on:
   - push
 jobs:
+  build:
+    name: 'Build-react-script'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+      - name: 'move frontend'
+        run: cd front-end
+      - name: 'yarn build'
+        run: yarn build
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
