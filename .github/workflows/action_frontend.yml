@@ -10,6 +10,8 @@ jobs:
         uses: actions/checkout@master
       - name: 'move frontend'
         run: cd front-end
+      - name: 'Check'
+        run: ls
       - name: 'Pakages installation'
         run : yarn install
       - name: 'Pakages build'
