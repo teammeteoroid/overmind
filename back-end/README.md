@@ -14,16 +14,10 @@ Terraform도구를 사용하여 인프라를 정의한다.
 Github Action을 사용하여 CI/CD를 구성한다.
 
 #### Back-end
-
+구성:
+Lambda함수를 정의하기 위한 js파일
+Lambda함수, APIGateway Terraform설정 파일.
 
 #### front-end
-배포순서
-##### React app build
-yarn build
-"yarn build" 명령어로 React앱을 빌드한다.
-
-##### terraform 설정
-
-
 
 ### Deploy scenario
